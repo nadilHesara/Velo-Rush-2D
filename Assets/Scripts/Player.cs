@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
 
-    private bool isRunning;
-    private bool runBegun;
+    
+    private bool playerUnlocked;
 
     [Header("Collision Info")]
     [SerializeField] private float groundCheckDistance;
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     {
         AnimatorControllers();
 
-        if (runBegun)
+        if (playerUnlocked)
             rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
 
         CheckCollision();
@@ -42,9 +42,8 @@ public class Player : MonoBehaviour
 
     private void AnimatorControllers()
     {
-        isRunning = rb.linearVelocity.x != 0;
-
-        anim.SetBool("isRunning", isRunning);
+        
+        anim.SetFloat("xVelocity", rb.linearVelocity.x);
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
         anim.SetBool("isGrounded", isGrounded);
     }
@@ -57,7 +56,7 @@ public class Player : MonoBehaviour
     private void CheckInput()
     {
         if (Input.GetButtonDown("Fire2"))
-            runBegun = true;
+            playerUnlocked = true;
 
 
         if (Input.GetButtonDown("Jump") && isGrounded)
