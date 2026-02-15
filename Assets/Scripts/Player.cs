@@ -3,24 +3,26 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private Animator anim;
 
     [Header("Movement Info")]
-    public float moveSpeed;
-    public float jumpForce;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpForce;
 
     private bool runBegun;
 
     [Header("Collision Info")]
-    public float groundCheckDistance;
-    public LayerMask whatIsGround;
+    [SerializeField] private float groundCheckDistance;
+    [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
