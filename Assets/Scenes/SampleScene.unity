@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 125525311}
   - component: {fileID: 125525310}
   - component: {fileID: 125525312}
+  - component: {fileID: 125525313}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -289,13 +290,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1fd8569bbc2fa479d8dfe2fb0eb2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  rb: {fileID: 125525311}
   moveSpeed: 1
   jumpForce: 12
   groundCheckDistance: 1.4
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+--- !u!95 &125525313
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125525307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0aa8215660e540a4c835947dba48ae98, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &214839751
 GameObject:
   m_ObjectHideFlags: 0
