@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
         isRunning = rb.linearVelocity.x != 0;
 
         anim.SetBool("isRunning", isRunning);
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
+        anim.SetBool("isGrounded", isGrounded);
     }
 
     private void CheckCollision()
